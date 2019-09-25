@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -39,11 +40,16 @@ public class MainActivity extends AppCompatActivity {
         mbtnRandom.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("BBB","da click");
+                //lay gia tri edittext
+                String sTextMin=medtmin.getText().toString();
+                String sTextMax=medtmax.getText().toString();
+                //kiem tra gia tri
+                if(sTextMin.equals("") || sTextMax.isEmpty()){
+                    Toast.makeText(MainActivity.this,"Chua nhap gia tri",Toast.LENGTH_LONG).show();
+                }
+
             }
         });
-        String sTextMin=medtmin.getText().toString();
-
 
 
     }
